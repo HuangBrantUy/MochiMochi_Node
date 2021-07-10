@@ -1,0 +1,85 @@
+
+    <div class="container4">
+        <div class="text">
+            <img src="/texts/lookbook.png">
+        </div>
+        <div class="row">
+            <div class="column">
+                
+                <img src="/products/featured.png" style="width: 303px;">
+                <img class="column-hover" src="/products/featured1-1.png" style="width: 303px;">
+             </div>
+             <div class="column">
+                <img src="/products/featured2.png" style="width: 303px;">
+                <img class="column-hover" src="/products/featured2-1.png" style="width: 303px;">
+             </div>
+             <div class="column">
+                <img src="/products/featured3.png" style="width: 303px;">
+                <img class="column-hover" src="/products/featured3-1.png" style="width: 303px;">
+             </div>
+             <div class="column">
+                <img src="/products/featured4.png" style="width: 303px;">
+                <img class="column-hover" src="/products/featured4-1.png" style="width: 303px;">
+             </div>
+        </div>
+    </div>
+
+
+<style scoped>
+
+.text{
+    margin-top: 15px;
+    padding: 5px;
+    background-color:black;
+    width: 100%;
+    max-width: 2000px;
+}
+
+
+.container4{
+    height: 100%;
+    width: 100%;
+    max-width: 1290px;
+    height: 400px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container4 .text img{
+    width: 15%;
+}
+
+
+.container4 .row img:hover{
+    opacity: 0;
+}
+
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    width: 25%;
+  padding: 14px;
+}
+
+.row img{
+    position: absolute;
+    transition: ease-in-out 0.2s;
+    
+}
+
+.row .column img.column-hover{
+    opacity: 0;
+}
+.row .column img.column-hover:hover{
+    opacity: 1;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>

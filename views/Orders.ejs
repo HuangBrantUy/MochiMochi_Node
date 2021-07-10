@@ -1,0 +1,65 @@
+<div class="orders">
+    <div class="sidebar">
+      <center><img  src="/logo1.png"></center>
+        <br>    
+        <center><a href="/admin/homeget" >Overview</a><br>
+        <a href="/admin/products">Products</a><br>
+       <!-- <a href="/admin/images" >Images</a><br> -->
+        <a href="/admin/orders" >Orders</a><br>
+        <br><br>
+        <a href="/admin" >Logout</a><br></center>
+    </div>
+    <div class="content">
+        <h1>Orders</h1>
+        <table>
+            <tr>
+              <th>Order Details</th>
+              <th></th>
+            </tr>
+            <% var i;
+             for(i=0;i < orders.length; i++) {
+               var link = "/admin/markasdone/"+ orders[i].id%>
+            <tr>
+              <td><%= orders[i].name%><br><%= orders[i].email%><br><%= orders[i].number%><br><%= orders[i].productName%>, <%= orders[i].size%>, <%= orders[i].quantity%>pcs<br>Total: <%= orders[i].total%></td>
+              <td><a href="<%= link%>"><button>Mark as done</button></a></td>
+            </tr>
+            <% } %>
+          </table>
+    </div>
+</div>
+
+<style>
+    .sidebar img{
+margin-top: 20px;
+width: 70%;
+}
+.sidebar {
+width: 15%;
+background: black;
+height: 600px;
+float: left;
+}
+
+.content {
+margin-left: 15%;
+height: 600px;
+padding: 20px;
+}
+
+table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+              }
+              
+              td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+              }
+              
+              tr:nth-child(even) {
+                background-color: #dddddd;
+              }
+
+</style>

@@ -1,0 +1,159 @@
+<%- include('Navbar'); %>
+    <div class="container2">
+        
+    <div class="row">
+        <div class="column">
+            <% var pic  = "/products/product-shirt/product"+product[0].id+".png"; 
+            var pic2  = "/products/product-shirt/product"+product[0].id+"-1.png";%>
+            <img src="<%= pic%>" style="width: 33pc;">
+            <img class="column-hover" src="<%= pic2%>">
+        </div>
+    </div>
+    <div class="title-box">
+         <p>
+            <%=product[0].productName %>
+         </p>
+    </div>
+    <div class="details">
+            <p>
+                ₱ 500.00
+            </p>
+            
+    </div>
+    <form action="/addorder" method="post">
+        <input type="hidden" name="productid" id="productid" value="<%= product[0].id%>">
+   
+    <div class="dropdown">
+        <p>Sizes</p>
+        <select v-model="sizes" id="size" name="size">
+            <option>xs</option>
+            <option>s</option>
+            <option>m</option>
+            <option>l</option>
+            <option>xl</option>
+            <option>xl_2</option>
+        </select>
+        <br>
+        <br>
+        <p>Quantity</p>
+        <select v-model="sizes" id="quantity"  name="quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Add cart">
+    </div>
+    
+   </form>
+    </div>
+
+    <%- include('Footer'); %>
+<style scoped>
+
+    .container2{
+        width: 100%;
+        max-width: 1090px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -20px;
+    }
+
+
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+    .column {
+        width: 48.33%;
+            margin-left: 0;
+            margin-right: auto;
+            
+        }
+
+        .row img{
+            position: absolute;
+            width: 43.33%;
+            max-width: 1000px;
+            transition: ease-in-out 0.2s;
+            
+        }
+
+        .row .column img.column-hover{
+            opacity: 0;
+            width: 48.33%;
+            margin-left: 0;
+            margin-right: auto;
+            
+        }
+        .row .column img.column-hover:hover{
+            opacity: 1;
+        }
+
+        .column img{
+            width: 48.33%;
+            margin-left: 0;
+            margin-right: auto;
+            
+            
+        }
+       
+    /* Clear floats after image containers */
+    .row::after {
+    clear: both;
+    display: table;
+    margin: 0;
+    }
+
+    .container2{
+      position: absolute;
+      bottom: 20;
+      left: 0;
+      right: 0;
+      
+    }
+    .title-box p{
+        text-align: left;
+        font-size: 30px;
+    }
+    .title-box{
+         margin-left: 550px;
+        margin-top: 50px;
+        width: 1000px;
+    }
+
+
+    .details{
+         margin-left: 550px;
+        margin-top: -10px;
+        width: 1000px;
+    }
+    .details p{
+        text-align: left;
+    }
+
+    .dropdown{
+        margin-left: 550px;
+        color: black;
+        background-color: white;
+    }
+    .dropdown p{
+        margin-bottom: 0px;
+    }
+
+    .dropdown select{
+        padding: 5px;
+    }
+
+    .dropdown button{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border: black 1px solid;
+        
+    }
+
+    .otherProd{
+        margin-top: 200px;
+    }
+
+</style>

@@ -1,0 +1,62 @@
+<%- include('Navbar'); %>
+<div class="profile">
+
+    <div class="profile-details">
+        <h1><%= users[0].name %></h1>
+        <h7><%= users[0].email %></h7><br>
+        <h7><%= users[0].Number %></h7><br><br>
+        <h9>My Address</h9><br>
+        <h7><%= users[0].address %></h7>
+        <a href="logout">
+            <div class="button"><button type="button" class="btn btn-danger">Log Out</button></div>
+        </a>
+    </div>
+    <div class="order-history">
+        <h2>Order History</h2>
+        <div class="orders">
+            <h8>Smiley Tee - 500 php - 4 pcs</h8><br>
+            <h8>69 Street Name, Barangay Kamunggay, Vigan</h8>
+            <br>
+            <h8>Total: 2000</h8>
+        </div>
+        <div class="orders">
+            <h8>Code Tee - 500 php - 2 pcs</h8><br>
+            <h8>69 Street Name, Barangay Kamunggay, Vigan</h8>
+            <br>
+            <h8>Total: 1000</h8>
+        </div>
+        <div class="orders">
+            <h8>Code Hoodie - 500 php - 1 pc</h8><br>
+            <h8>69 Street Name, Barangay Kamunggay, Vigan</h8>
+            <br>
+            <h8>Total: 500</h8>
+        </div>
+    </div>
+</div>
+<%- include('Footer'); %>
+<style>
+    .profile{
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        width: 60%;
+        padding: 10px;
+    }
+
+    .profile-details{
+        float: left;
+    }
+
+    .order-history{
+        margin-left: 400px;
+    }
+
+    .orders{
+        margin-top: 30px;
+    }
+
+    button{
+        margin-top: 20px;
+    }
+</style>

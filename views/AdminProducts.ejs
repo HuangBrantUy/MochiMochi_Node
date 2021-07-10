@@ -1,0 +1,199 @@
+
+<div class="admin-prod">
+    <div class="sidebar">
+        <center><img  src="/logo1.png"></center>
+        <br>    
+        <center><a href="/admin/homeget" >Overview</a><br>
+        <a href="/admin/products">Products</a><br>
+        <!-- <a href="/admin/images" >Images</a><br>-->
+        <a href="/admin/orders" >Orders</a><br>
+        <br><br>
+        <a href="/admin" >Logout</a><br></center>
+    </div>
+    <div class="content">
+    
+          <br><br>
+          <h2>Shirts</h2>
+          
+          <table>
+            <tr>
+                <th>ID</th>
+              <th>Shirt Name</th>
+              <th>XS</th>
+              <th>S</th>
+              <th>M</th>
+              <th>L</th>
+              <th>XL</th>
+              <th>2XL</th>
+              <th></th>
+            </tr>
+
+
+            <% for(i=0;i < products.length; i++) {
+             var link= "/admin/deleteProduct/" + products[i].id; %>
+            <tr >
+              <th><a href="#" id="<%= products[i].id%>" onclick="selectProd(this)"><%= products[i].id%></a></th>
+              <td><%= products[i].productName %></td>
+              <td><%= products[i].xs %></td>
+              <td><%= products[i].s %></td>
+              <td><%= products[i].m %></td>
+              <td><%= products[i].l %></td>
+              <td><%= products[i].xl %></td>
+              <td><%= products[i].xl_2 %></td>
+              <td><a href="<%= link%>">Delete</a></td>
+            </tr>
+            <% } %>
+           
+          </table>
+          <br>
+          <br>
+          <form action="/addProduct" method="POST"> 
+            <div class="form-group">
+                <label>Product Name</label>
+                <input class="form-control" name="productName" id="productName">
+            </div>
+            <h5>Sizes</h5>
+            <div class="form-sizes">
+                <label>XS</label>
+                <input class="form-control" name="xs" id="xs">
+            </div>
+            <div class="form-sizes">
+                <label>S</label>
+                <input class="form-control" name="s" id="s">
+            </div>
+            <div class="form-sizes">
+                <label>M</label>
+                <input class="form-control" name="m" id="m">
+            </div>
+            <div class="form-sizes">
+                <label>L</label>
+                <input class="form-control" name="l" id="l">
+            </div>
+            <div class="form-sizes">
+                <label>XL</label>
+                <input class="form-control" name="xl" id="xl">
+            </div>
+            <div class="form-sizes">
+                <label>2XL</label>
+                <input class="form-control" name="xl_2" id="xl_2">
+            </div>
+            <input type="hidden" name="prodid" value="-1" id="prodid">
+            <br><br><br><br>    
+            <button type="submit">Add Product</button>
+          </form>
+          <br>
+          
+    </div>
+ 
+</div>
+
+<script>
+  function selectProd(elem){
+    var id = elem.id;
+    var firstchild = elem.parentNode.parentNode.firstElementChild;
+    var prodname = document.getElementById('productName');
+    var xs = document.getElementById('xs');
+    var s = document.getElementById('s');
+    var m = document.getElementById('m');
+    var l = document.getElementById('l');
+    var xl = document.getElementById('xl');
+    var xl_2 = document.getElementById('xl_2');
+    var inputid = document.getElementById('prodid');
+    inputid.value = id;
+    prodname.value = firstchild.nextElementSibling.innerHTML;
+    xs.value = firstchild.nextElementSibling.nextElementSibling.innerHTML;
+    s.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    m.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    l.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    xl.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    xl_2.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+  }
+</script>
+<style>
+.sidebar img{
+margin-top: 20px;
+width: 70%;
+}
+.sidebar {
+width: 15%;
+background: black;
+height: 600px;
+float: left;
+}
+
+.content {
+margin-left: 15%;
+height: 600px;
+padding: 20px;
+}
+
+* {
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+float: left;
+width: 25%;
+padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+.column {
+width: 100%;
+display: block;
+margin-bottom: 20px;
+}
+}
+
+/* Style the counter cards */
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+padding: 26px;
+text-align: center;
+background-color: #f1f1f1;
+}
+
+table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+
+.form-group{
+    width: 200px;
+
+}
+
+.form-sizes{
+    width: 70px;
+    float: left;
+}
+
+
+</style>

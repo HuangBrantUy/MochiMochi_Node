@@ -1,0 +1,100 @@
+
+    <div class="container5">
+        <div class="row">
+            <% var i;
+            var image1;
+            var image2;
+            var link;
+             for(i=0;i < product.length;i++){
+                image1 = "/products/product-shirt/product"+ (i+1) +"-1.png";
+                image2 = "/products/product-shirt/product"+ (i+1) +".png";
+                 link = "product-details/"+ product[i].id%>
+            <div class="column">
+                <a href="<%= link%>" class="nav-link">
+                <img src="<%= image2%>">
+                <img class="column-hover" src="<%= image1%>"></a>
+                <h1><%= product[i].productName %></h1>
+                <h2>P500</h2>
+            </div>
+            <%}%>
+           
+        </div>
+    </div>
+
+    
+    <style scoped>
+    
+    
+        .container5{
+            width: 100%;
+            max-width: 1090px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -1pc;
+       
+        }
+    
+    
+        /* Three image containers (use 25% for four, and 50% for two, etc) */
+        .column {
+            width: 18.33%;
+                margin-left: 0;
+                margin-right: auto;
+                
+            }
+    
+            .row img{
+                position: absolute;
+                width: 13.33%;
+                max-width: 400px;
+                transition: ease-in-out 0.2s;
+                
+            }
+    
+            .row .column img.column-hover{
+                opacity: 0;
+                width: 18.33%;
+                margin-left: 0;
+                margin-right: auto;
+                
+            }
+            .row .column img.column-hover:hover{
+                opacity: 1;
+            }
+    
+            .column img{
+                width: 18.33%;
+                margin-left: 0;
+                margin-right: auto;
+                
+                
+            }
+    
+        /* Clear floats after image containers */
+        .row::after {
+        clear: both;
+        display: table;
+        margin: 0;
+        }
+    
+        .container5{
+          position: absolute;
+          bottom: 20;
+          left: 0;
+          right: 0;
+          
+        }
+    
+        h1 {
+            margin-top: 210px;
+            text-align: center;
+            font-size: 13px;
+        }
+    
+        h2{
+            text-align:center;
+            font-size: 11px;
+        }
+    
+    
+    </style>

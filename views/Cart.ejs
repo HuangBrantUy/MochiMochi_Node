@@ -1,0 +1,87 @@
+<%- include('Navbar'); %>
+<img class="coverimg" src="/headers/cartHead.png">
+    <div class="checkout-page">
+        <div class="cart">
+            <h4>Your Cart</h4>
+            <table>
+                <tr>
+                  <th></th>
+                  <th>T-Shirt</th>
+                  <th>Size</th>
+                  <th>Pieces</th>
+                  <th>Price</th>
+                </tr>
+
+                <% var i;
+                var pic;
+                var total = 0;
+                for(i=0;i < product.length;i++){
+                    pic = "/products/product-shirt/product"+ (i+1) +".png";
+                    total += product[i].total;
+                    %>
+                <tr>
+                  <td><center><img src="<%= pic%>"></center></td>
+                  <td><%= product[i].productName%></td>
+                  <td><%= product[i].size%></td>
+                  <td><%= product[i].quantity%></td>
+                  <td><%= product[i].total%></td>
+                </tr>
+               <% } %>
+            </table>
+            <br>
+            <h5>Total <%= total%></h5>
+        </div>
+        <br><br>
+       
+            <div class="confirm-button">
+                <a href="checkout">
+                    <button type="button" class="btn btn-dark">Proceed Checkout</button>
+                </a>
+            </div>
+    </div>
+    <%- include('Footer'); %>
+<style scoped>
+
+    .checkout-page{
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        
+        width: 60%;
+        padding: 10px;
+    }
+    h5{
+        float:right;
+    }
+    table{
+        text-align: right;
+        margin-top: 30px;
+    }
+
+    th{
+        width: 200px;
+    }
+  
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    img{
+        width: 80px;
+        height: auto;
+    }
+
+    .confirm-button button{
+        margin-top: 30px;
+        float: right;
+    }
+
+    .coverimg{
+          padding-bottom: 25px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 68%;
+    }
+</style>
