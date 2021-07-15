@@ -4,96 +4,115 @@
             <% var i;
             var image1;
             var image2;
-             for(i=0;i < product.length;i++){
+             for(i=0; i < product.length;i++){
                 image1 = "/products/product-shirt/product"+ (i+1) +"-1.png";
                 image2 = "/products/product-shirt/product"+ (i+1) +".png";
                 link = "product-details/"+ product[i].id %>
             <div class="column">
                 <a href="<%= link%>" class="nav-link">
-                <img src="<%= image2%>">
+                <img class="prodimgclass" src="<%= image2%>">
                 <img class="column-hover" src="<%= image1%>"></a>
-                <h1><%= product[i].productName %></h1>
-                <h2>P500</h2>
+                <h1 class="productnamedes"><%= product[i].productName %></h1>
+                <h2 class="productpricedes">P500</h2>
             </div>
             <%}%>
            
             
         </div>
-    </div>
-        
+
+	</div>
+	<div class="expanderdiv">
+	</div>
    
     <style scoped>
-    
-    
-        .container6{
-            width: 100%;
-            max-width: 1090px;
-            margin-left: auto;
-            margin-right: auto;
-       
-        }
-    
-    
-        /* Three image containers (use 25% for four, and 50% for two, etc) */
-        .column {
-            width: 18.33%;
-                margin-left: 0;
-                margin-right: auto;
-                
-            }
-    
-            .row img{
-                position: absolute;
-                width: 13.33%;
-                max-width: 400px;
-                transition: ease-in-out 0.2s;
-                
-            }
-    
-            .row .column img.column-hover{
-                opacity: 0;
-                width: 18.33%;
-                margin-left: 0;
-                margin-right: auto;
-                
-            }
-            .row .column img.column-hover:hover{
-                opacity: 1;
-            }
-    
-            .column img{
-                width: 18.33%;
-                margin-left: 0;
-                margin-right: auto;
-                
-                
-            }
-    
-        /* Clear floats after image containers */
-        .row::after {
-        clear: both;
-        display: table;
-        margin: 0;
-        }
-    
-        .container6{
-          position: absolute;
-          bottom: 20;
-          left: 0;
-          right: 0;
-          
-        }
-    
-        h1 {
-            margin-top: 210px;
-            text-align: center;
-            font-size: 13px;
-        }
-    
-        h2{
-            text-align:center;
-            font-size: 11px;
-        }
-    
-    
-    </style>
+
+
+		.container6{
+		width: 100%;
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+
+		}
+		
+		.expanderdiv{
+		min-height:50px;
+		}
+		
+		.prodimgclass{
+		max-height: 200px;
+		}
+
+		/* Three image containers (use 25% for four, and 50% for two, etc) */
+		.column {
+		width: 18.33%;
+		margin-left: 0;
+		margin-right: auto;
+		}
+
+		.row img{
+		position: absolute;
+		width: 13.33%;
+		max-width: 400px;
+		transition: ease-in-out 0.2s;
+
+		}
+
+		.row .column img.column-hover{
+		opacity: 0;
+		width: 18.33%;
+		margin-left: 0;
+		margin-right: auto;
+		max-height: 200px;
+
+		}
+		.row .column img.column-hover:hover{
+		opacity: 1;
+		}
+
+		.column img{
+		width: 18.33%;
+		margin-left: 0;
+		margin-right: auto;
+
+
+		}
+
+		/* Clear floats after image containers */
+		.row::after {
+		clear: both;
+		display: table;
+		margin: 0;
+		}
+
+		.container6{
+		position: absolute;
+		bottom: 20;
+		left: 0;
+		right: 0;
+
+		}
+
+		.productnamedes {
+		margin-top: 230px;
+		text-align: center;
+		font-size: 20px;
+		margin-left: 30px;
+		font-family: 'Press Start 2P', cursive;
+		font-weight: 600;
+		}
+
+		.productpricedes{
+		text-align:center;
+		font-size: 20px;
+		margin-left: 28px;
+		font-family: 'Press Start 2P', cursive;
+		color: #EFC4C0;
+		background-color: black;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		}
+
+
+	</style>

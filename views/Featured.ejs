@@ -1,85 +1,122 @@
 
     <div class="container4">
         <div class="text">
-            <img src="/texts/lookbook.png">
+			<p class="toppicks">Featured Items</p>
         </div>
         <div class="row">
-            <div class="column">
-                
-                <img src="/products/featured.png" style="width: 303px;">
-                <img class="column-hover" src="/products/featured1-1.png" style="width: 303px;">
-             </div>
-             <div class="column">
-                <img src="/products/featured2.png" style="width: 303px;">
-                <img class="column-hover" src="/products/featured2-1.png" style="width: 303px;">
-             </div>
-             <div class="column">
-                <img src="/products/featured3.png" style="width: 303px;">
-                <img class="column-hover" src="/products/featured3-1.png" style="width: 303px;">
-             </div>
-             <div class="column">
-                <img src="/products/featured4.png" style="width: 303px;">
-                <img class="column-hover" src="/products/featured4-1.png" style="width: 303px;">
-             </div>
+			<div class="featureditemholder">
+				<div class="col-md-3 featureditems">
+					<div class="featuredholder">
+						<img class="designpic" src="/products/neko.jpg">
+					</div>
+					<div class="shirtholder">
+						<img class="shirtimg column-hover" src="/products/shirtManneki.png">
+					</div>
+				 </div>
+				 <div class="col-md-3 featureditems">
+					 <div class="featuredholder">
+						 <img class="designpic" src="/products/nobackGalaxy.png">
+					</div>
+					<div class="shirtholder">
+						<img class="shirtimg column-hover" src="/products/sampleGalaxy.png">
+					</div>
+				 </div>
+				 <div class=" col-md-3 featureditems">
+					 <div class="featuredholder">
+						 <img class="designpic" src="/products/popgirl.png" >
+					</div>
+					 <div class="shirtholder">
+						 <img class="shirtimg column-hover" src="/products/popShirt.png" >
+					 </div>
+				 </div>
+				 <div class=" col-md-3 featureditems">
+					 <div class="featuredholder">
+						 <img class="designpic" src="/products/sinister.png">
+					</div>
+					<div class="shirtholder">
+						<img class="shirtimg column-hover" src="/products/sinisterShirt.png">
+					</div>
+				 </div>
+			</div>
         </div>
     </div>
 
 
 <style scoped>
 
-.text{
-    margin-top: 15px;
-    padding: 5px;
-    background-color:black;
-    width: 100%;
-    max-width: 2000px;
-}
+	.text{
+	margin-top: 15px;
+	padding: 5px;
+	background-color:#487D64;
+	width: 100%;
+	max-width: 2000px;
+	}
+
+	.container4{
+	height: 100%;
+	width: 100%;
+	max-width: 1600px;
+	height: 400px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+	.container4 .text img{
+	width: 15%;
+	}
+	
+	.featureditemholder{
+		height:450px;
+	}
+	
+	.shirtholder{
+	background-color: white;
+	height: 450px;
+	width: 380px;
+	}
+
+	.designpic{
+	max-height: 420px !important;
+	max-width: 380px;
+	}
+
+	.shirtimg{
+	background-color: white;
+	}
+
+	.container4 .row img:hover{
+	opacity: 0;
+	}
+
+	/* Three image containers (use 25% for four, and 50% for two, etc) */
+	.column {
+	width: 25%;
+	padding: 14px;
+	}
 
 
-.container4{
-    height: 100%;
-    width: 100%;
-    max-width: 1290px;
-    height: 400px;
-    padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
-}
+	/* Clear floats after image containers */
+	.row::after {
+	content: "";
+	clear: both;
+	display: table;
+	}
 
-.container4 .text img{
-    width: 15%;
-}
+	.toppicks{
+	color:white;
+	text-align:center;
+	font-size: 40px;
+	padding-top: 10px;
+	font-family: 'Press Start 2P', cursive;
+	font-weight: 600;
+	letter-spacing: 2px;
+	}
+
+	.nekobgimage{
+	z-index: -4;
+	width:100%;
+	}
 
 
-.container4 .row img:hover{
-    opacity: 0;
-}
-
-
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-    width: 25%;
-  padding: 14px;
-}
-
-.row img{
-    position: absolute;
-    transition: ease-in-out 0.2s;
-    
-}
-
-.row .column img.column-hover{
-    opacity: 0;
-}
-.row .column img.column-hover:hover{
-    opacity: 1;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 </style>

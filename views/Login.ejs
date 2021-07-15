@@ -4,24 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+	<link rel="icon" href="/mochilogo.png">
+	<title>Log-In</title>
 </head>
-<body>
-    <h1>This is the Login page</h1>
-    here are the links to the pages
+<body style="background-color: black;">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="signdivpad col-md-8">
+			<div class="row">
+				<div class="mainsigndiv col-md-6">
+					<h3 class="logtitle">
+						LOG IN
+					</h3>
+					<form action="/home" class="Lformchange" role="form">
+						<div class="form-group">
+							 
+							<label for="defaultFormLoginEmailEx" class="loglabels">
+								Email Address
+							</label>
+							<input type="email" class="inputterstyleL form-control" id="defaultFormLoginEmailEx">
+						</div>
+						<div class="form-group">
+							 
+							<label class="loglabels" for="defaultFormLoginPasswordEx">
+								Password
+							</label>
+							<input type="password" class="inputterstyleL form-control" id="defaultFormLoginPasswordEx">
+						</div>
+						<div class="logbutt">
+						<button type="submit" class="logbuttonstyle">
+							Sign-In
+						</button>
+						</div>
+					</form>
+				</div>
+				<div style="padding-left: 30px;" class="signdiv col-md-6 ">
+					 
+					<button type="button" class="closebutt">
+						X
+					</button><a href="Home.html"><img  alt="EZ Logo" class="logostyle" src="/mochilogo.png"></a>
+					<h3 class="logflavorstyle">
+						Not Yet a Member?
+					</h3>
+						<a class="loghyperstyle" href="/register">
+							<u>Create an account here</u>
+						</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
 
-    <form action="/home">
-      <p class="h4 text-center mb-4">Sign in</p>
-      <label for="defaultFormLoginEmailEx" class="grey-text">Your email</label>
-      <input id="defaultFormLoginEmailEx" class="form-control"/>
-      <br/>
-      <label for="defaultFormLoginPasswordEx" class="grey-text">Your password</label>
-      <input type="password" id="defaultFormLoginPasswordEx" class="form-control"/>
-      <div class="text-center mt-4">
-        <button type="submit">Login</button>
-    
-    </form>
-
-    <h5>No account yet? <a href="/register">register here</a></h2>
-</body>
-</html>
+</body></html>

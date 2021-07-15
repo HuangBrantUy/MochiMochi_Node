@@ -20,7 +20,15 @@
   "scripts": {
     "start": "nodemon app.js"
   },
-  "author": "Joshua Laroa, Brant Uy, Natalie Sagnoy",
+  "author": "Elizabeth Espina, Kyle Rivero, Brant Uy",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuangBrantUy/MochiMochi_Node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HuangBrantUy/MochiMochi_Node/issues"
+  },
+  "homepage": "https://github.com/HuangBrantUy/MochiMochi_Node#readme",
   "description": ""
 }
