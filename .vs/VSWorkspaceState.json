@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
+    "",
     "\\public",
-    "\\public\\headers",
-    "\\public\\products\\product-shirt",
     "\\views"
   ],
+  "SelectedNode": "\\views\\Contact.ejs",
   "PreviewInSolutionExplorer": false
 }
