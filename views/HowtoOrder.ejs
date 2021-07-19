@@ -1,8 +1,10 @@
 <%- include('Navbar'); %>
     <div class="howto">
       <img class="nekobg" src="/background/nekobg.png"></img>
-        <img class="coverimg" src="/headers/howtoHead.png">
-        <p>Instructions:
+        <img class="coverimg" src="/headers/HowToOrder.svg">
+        <div>
+        <div class="howtodiv">
+        <b><p>Instructions:</b>
                 <br><br>
             - Go to SHOP section to browse all the products available at our online shop
 <br><br>
@@ -17,14 +19,16 @@
             - You will receive a text message that confirms your order
 
 <br><br><br><br>
-            PAYMENT DETAILS
+            <b>PAYMENT DETAILS</b>
             <br><br>
             - BPI
 <br><br>
-             ACCOUNT NAME: JOSHUA L. LAROA
+             ACCOUNT NAME: Brant Francis S. Uy
             <br>
-             ACCOUNT NUMBER: 9799267613
+             ACCOUNT NUMBER: 95321239123
         </p>
+        </div>
+        </div>
     </div>
 
     <%- include('Footer'); %>
@@ -46,7 +50,13 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 65%;
+      width: 70%;
+      border-radius: 2px;
+      border-style: solid;
+      background-color: white;
+      padding-left: 16px;
+      font-family: 'Montserrat', sans-serif;
+      padding-top:10px;
     }
 
     
@@ -63,5 +73,11 @@
 	  position: absolute;
 	  bottom: -700px;
 	  right: 100px;
+      size: 75%;
 	  }
+
+      .howtodiv{
+      font-size: 16px;
+      }
+
 </style>
