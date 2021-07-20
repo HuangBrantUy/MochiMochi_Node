@@ -2,17 +2,17 @@
 <div class="profile">
 
     <div class="profile-details">
-        <h1><%= users[0].name %></h1>
-        <h7><%= users[0].email %></h7><br>
-        <h7><%= users[0].Number %></h7><br><br>
-        <h9>My Address</h9><br>
-        <h7><%= users[0].address %></h7>
+        <h1 class="namestyle"><%= users[0].name %></h1>
+        <h7><b>Email: </b><%= users[0].email %></h7><br>
+        <h7><b>Contact Number: </b><%= users[0].Number %></h7><br><br>
+        <h9><b>Address: </b></h9><br>
+        <h7><%= users[0].address %></h7><br><br>
         <a href="logout">
-            <div class="button"><button type="button" class="btn btn-danger">Log Out</button></div>
+            <div class="button"><button type="button" class="buttonlog">Log Out</button></div>
         </a>
     </div>
     <div class="order-history">
-        <h2>Order History</h2>
+        <h2 class="orderhistorystyle">Order History</h2>
         <div class="orders">
             <h8>Smiley Tee - 500 php - 4 pcs</h8><br>
             <h8>69 Street Name, Barangay Kamunggay, Vigan</h8>
@@ -40,16 +40,26 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: auto;
-        width: 60%;
+        width: 70%;
         padding: 10px;
     }
 
     .profile-details{
         float: left;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        padding: 40px 80px 40px 40px;
+        background-image: url("/checkoutbg.png");
+        line-height: 200%;
     }
 
     .order-history{
-        margin-left: 400px;
+        margin-left: 500px;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        background-image: url("/rosegold.jpg");
+        font-weight: 600;
+        padding: 50px 50px 50px 50px;
     }
 
     .orders{
@@ -58,5 +68,31 @@
 
     button{
         margin-top: 20px;
+    }
+
+    .namestyle{
+    font-family: 'Press Start 2P', cursive;
+    }
+
+    .buttonlog{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #e60000;
+    border-radius: 20px;
+    border: none;
+    line-height: 140%;
+    }
+
+    .buttonlog:hover{
+    background-color:  #660000;
+    transition: 0.5s;
+    }
+
+    .orderhistorystyle{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
     }
 </style>

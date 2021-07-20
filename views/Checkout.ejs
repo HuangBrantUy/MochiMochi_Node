@@ -1,13 +1,13 @@
 <%- include('Navbar'); %>
-<img class="coverimg" src="/headers/checkoutHead.png">
+<img class="coverimg" src="/headers/checkoutbanner.png">
     <div class="checkout-page">
 
         
         <div class="cart">
-            <h6>Your Cart</h6>
+            <h6 class="yourcartstyle">Your Cart</h6>
             <table>
                 <tr>
-                  <th></th>
+                  <th>Preview</th>
                   <th>T-Shirt</th>
                   <th>Size</th>
                   <th>Pieces</th>
@@ -21,28 +21,30 @@
                     total += product[i].total;
                     %>
                 <tr>
-                  <td><center><img src="<%= pic%>"></center></td>
-                  <td><%= product[i].productName%></td>
-                  <td><%= product[i].size%></td>
-                  <td><%= product[i].quantity%></td>
-                  <td><%= product[i].total%></td>
+                  <td><center><img class="tdimage" src="<%= pic%>"></center></td>
+                  <td class="tdtextinfo"><%= product[i].productName%></td>
+                  <td class="tdtextinfo"><%= product[i].size%></td>
+                  <td class="tdtextinfo"><%= product[i].quantity%></td>
+                  <td class="tdtextinfo"><%= product[i].total%></td>
                 </tr>
                <% } %>
             </table>
             <br>
-            <h5>Total: <%= total%></h5>
+            <h5 class="totaltext">Total: <%= total%></h5>
         </div>
         <br><br><br>
         <div class="contact">
-            <p>Delivery Information<br><br><%= users[0].name %><br>
-                <%= users[0].email %><br>
-                <%= users[0].Number %><br>
-                <%= users[0].address %>
+            <p class="deliverystyle">Delivery Information</p>
+            <p class="deliveryinfostyle"><br>
+                <b>Name:</b> <%= users[0].name %><br>
+                Email Address: <%= users[0].email %><br>
+                Contact Number: <%= users[0].Number %><br>
+                Address: <%= users[0].address %>
             </p>
            
             <div class="confirm-button">
                 <a href="checkout-confirm" id="<%= users[0].email %>">
-                    <button type="button" class="btn btn-dark">Checkout</button>
+                    <button type="button" class="buttoncheckout">Checkout</button>
                 </a>
             </div>
             
@@ -81,16 +83,37 @@
         float:right;
     }
     table{
-        text-align: right;
+        text-align: center;
         margin-top: 30px;
+        font:
     }
 
     th{
-        width: 200px;
+        width: 250px;
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 16px;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
-  
+      .buttoncheckout{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #EFC4C0;
+    border-radius: 20px;
+    border: none;
+    }
+
+    .buttoncheckout:hover{
+    background-color: #F58C83;
+    transition: 0.5s;
+    }
+
     h1{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
 
     img{
@@ -109,5 +132,56 @@
           margin-left: auto;
           margin-right: auto;
           width: 68%;
+    }
+
+    tr:nth-child(odd){
+        background-color:#EFC4C0 !important;
+    }
+
+   tr:nth-child(even){
+        background-color:#F58C83 !important;
+        color: white;
+    }
+    .totaltext{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    float: right;
+    padding-right: 120px;
+    }
+
+        .cart{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    }
+
+    .yourcartstyle{
+    font-size: 26px;
+     font-family: 'Press Start 2P', cursive;
+    }
+
+       .tdimage{
+    width: 75%;
+    margin: 10px 10px 10px 10px;
+    }
+
+        .tdtextinfo{
+    font-size: 26px;
+    font-weight: 500;
+    }
+
+    .contact{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    background-image: url("/checkoutbg.png");
+    padding: 20px 20px 10px 20px;
+    }
+
+    .deliverystyle{
+        font-size: 20px;
+     font-family: 'Press Start 2P', cursive;
+    }
+
+    .deliveryinfostyle{
+    line-height: 200%;
     }
 </style>

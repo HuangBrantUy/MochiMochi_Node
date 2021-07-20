@@ -1,11 +1,11 @@
 <%- include('Navbar'); %>
-<img class="coverimg" src="/headers/cartHead.png">
+<img class="coverimg" src="/headers/cartbanner.png">
     <div class="checkout-page">
         <div class="cart">
-            <h4>Your Cart</h4>
-            <table>
-                <tr>
-                  <th></th>
+            <h4 class="yourcartstyle">Your Cart</h4>
+            <table class="carttable">
+                <tr class="carttablerow">
+                  <th>Preview</th>
                   <th>T-Shirt</th>
                   <th>Size</th>
                   <th>Pieces</th>
@@ -20,22 +20,22 @@
                     total += product[i].total;
                     %>
                 <tr>
-                  <td><center><img src="<%= pic%>"></center></td>
-                  <td><%= product[i].productName%></td>
-                  <td><%= product[i].size%></td>
-                  <td><%= product[i].quantity%></td>
-                  <td><%= product[i].total%></td>
+                  <td><center><img class="tdimage" src="<%= pic%>"></center></td>
+                  <td class="tdtextinfo"><%= product[i].productName%></td>
+                  <td class="tdtextinfo"><%= product[i].size%></td>
+                  <td class="tdtextinfo"><%= product[i].quantity%></td>
+                  <td class="tdtextinfo"><%= product[i].total%></td>
                 </tr>
                <% } %>
             </table>
             <br>
-            <h5>Total <%= total%></h5>
+            <h5 class="totaltext">Total <%= total%></h5>
         </div>
         <br><br>
        
             <div class="confirm-button">
                 <a href="checkout">
-                    <button type="button" class="btn btn-dark">Proceed Checkout</button>
+                    <button type="button" class="buttoncheckout">Proceed Checkout</button>
                 </a>
             </div>
     </div>
@@ -51,20 +51,22 @@
         width: 60%;
         padding: 10px;
     }
-    h5{
-        float:right;
-    }
     table{
-        text-align: right;
+        text-align: center;
         margin-top: 30px;
     }
 
     th{
-        width: 200px;
+        width: 250px;
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+        font-size:16px;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
   
     h1{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Press Start 2P', cursive;
     }
 
     img{
@@ -83,5 +85,60 @@
           margin-left: auto;
           margin-right: auto;
           width: 68%;
+    }
+
+    .cart{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    }
+
+    .yourcartstyle{
+    font-size: 26px;
+     font-family: 'Press Start 2P', cursive;
+    }
+
+    .buttoncheckout{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #EFC4C0;
+    border-radius: 20px;
+    border: none;
+    }
+
+    .buttoncheckout:hover{
+    background-color: #F58C83;
+    transition: 0.5s;
+    }
+
+    .totaltext{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    float: right;
+    padding-right: 20px;
+    }
+   tr:nth-child(0){
+        background-color:white !important;
+    }
+
+   tr:nth-child(odd){
+        background-color:#EFC4C0 !important;
+    }
+
+   tr:nth-child(even){
+        background-color:#F58C83 !important;
+        color: white;
+    }
+
+    .tdimage{
+    width: 75%;
+    margin: 10px 10px 10px 10px;
+    }
+
+    .tdtextinfo{
+    font-size: 26px;
+    font-weight: 500;
     }
 </style>
