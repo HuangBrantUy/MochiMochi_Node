@@ -5,7 +5,7 @@
         <div class="column">
             <% var pic  = "/products/product-shirt/product"+product[0].id+".png"; 
             var pic2  = "/products/product-shirt/product"+product[0].id+"-1.png";%>
-            <img src="<%= pic%>">
+            <img class="shirtimagestyle" src="<%= pic%>">
             <img class="column-hover" src="<%= pic2%>">
         </div>
     </div>
@@ -165,6 +165,14 @@
 
     .otherProd{
         margin-top: 200px;
+    }
+
+    .shirtimagestyle{
+    max-height: 520px;
+    }
+
+    .imagehoverstyle{
+    
     }
 
 </style>
