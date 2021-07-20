@@ -2,41 +2,66 @@
 <div class="login">
     
     <form method="post"  action="/admin/home">
-        <center><img  src="/logo.png"></center>
+        <center><img class="adminlogo" src="/mochilogo.png"></center>
         <div class="form-group">
-          <label for="exampleInputEmail1">User</label>
-          <input class="form-control" name="user">
+          <label for="exampleInputEmail1">Username</label>
+          <input class="form-control formstyles" name="user">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" placeholder="Password"  name="password">
+          <input type="password" class="form-control formstyles" placeholder="Password"  name="password">
         </div>
  
-            <center><button class="btn btn-dark">Submit</button></center>
+            <center><button class="subbutton">Submit</button></center>
 
         
       </form>
 </div>
 
 <style>
-    form {
-        margin-top: 40px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 20%;
-        padding: 10px;
-    }
+	form {
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	padding: 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-size:16px;
+	}
 
-    img{
-        margin: auto;
-        padding: 20px;
-    }
+	img{
+	margin: auto;
+	padding: 20px;
+	}
 
-    .form-group{
-        margin-top: 10px;
-    }
+	.form-group{
+	margin-top: 10px;
+	}
 
-    button{
-        margin-top: 20px;
-    }
+	.subbutton{
+	margin-top: 20px;
+	background-color: #EFC4C0;
+	border-radius: 20px;
+	padding: 5px 26px 5px 26px;
+	border: 1px;
+	font-family: 'Montserrat', sans-serif;
+	font-size:16px;
+	font-weight: 500;
+	}
+
+	.subbutton:hover{
+	background-color: #F58C83;
+	transition: 0.5s;
+	color: white;
+	}
+
+	.adminlogo{
+	width: 50%;
+	}
+
+	.formstyles{
+	font-family: 'Montserrat', sans-serif;
+	font-size:16px;
+	font-weight: 500;
+	}
 </style>

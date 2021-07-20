@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\headers",
+    "\\public\\sizes",
     "\\views"
   ],
-  "SelectedNode": "\\views\\AfterCheckout.ejs",
+  "SelectedNode": "\\views\\ProductDetail.ejs",
   "PreviewInSolutionExplorer": false
 }
