@@ -66,13 +66,13 @@ exports.checkout_get = async (req, res)=>{
     let data = await account.model.findAll({
         
         where: {
-            id: user
+            id: cookie
             
         }
         
     });
     res.locals.users = data;
-    const query = "Select * from orders where uid = "+user+" and stat = 0";
+    const query = "Select * from orders where uid = "+cookie+" and stat = 0";
     var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
     res.render('Checkout',{product:product});
 }
@@ -99,6 +99,7 @@ exports.editProfile_get = (req, res)=>{
 
 exports.checkoutConfirm_get = async (req, res)=>{
 
+    var user = req.cookies.user;
     const query = "Update orders set stat = 1 where uid = "+user;
     await connection.sequelize.query(query, { type: QueryTypes.UPDATE});
     res.render('AfterCheckout');
@@ -238,7 +239,8 @@ exports.addProduct_post = async(req, res)=>{
 
 exports.addOrder = async(req, res)=>{
 
-    req.body.uid = user;
+
+    req.body.uid = req.cookies.user;
     req.body.total = parseInt( req.body.quantity) * 500;
     req.body.stat = 0;
     let data = await order.model.create(
