@@ -8,7 +8,7 @@ const { QueryTypes, where } = require('sequelize');
 const { query } = require("express");
 const saltRounds = 10;
 const maxAge = 3 * 24 * 60 * 60;
-const user =  1;
+
 //end of models
 
 exports.index_get = async (req, res)=>{
@@ -47,7 +47,9 @@ exports.about_get = (req, res)=>{
 
 exports.cart_get = async(req, res)=>{
 
-    const query = "Select * from orders where uid = "+user +" and stat = 0";
+    // const userid = req.body.userid;
+    var user = req.cookies.user
+    const query = "Select * from orders where uid = "+ user +" and stat = 0";
     var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
 
     res.render('Cart',{product:product});
@@ -85,7 +87,7 @@ exports.profile_get = async (req, res)=>{
         }
         
     });
-    res.locals.users = data;
+    res.locals.user = data;
     res.render('Profile');
 }
 

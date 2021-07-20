@@ -29,20 +29,20 @@
 					<h3 class="logtitle">
 						LOG IN
 					</h3>
-					<form action="/home" class="Lformchange" role="form">
+					<form action="/login" method="POST" class="Lformchange" role="form">
 						<div class="form-group">
 							 
 							<label for="defaultFormLoginEmailEx" class="loglabels">
 								Email Address
 							</label>
-							<input type="email" class="inputterstyleL form-control" id="defaultFormLoginEmailEx">
+							<input type="email" name="email" class="inputterstyleL form-control" id="defaultFormLoginEmailEx">
 						</div>
 						<div class="form-group">
 							 
 							<label class="loglabels" for="defaultFormLoginPasswordEx">
 								Password
 							</label>
-							<input type="password" class="inputterstyleL form-control" id="defaultFormLoginPasswordEx">
+							<input type="password" name="password" class="inputterstyleL form-control" id="defaultFormLoginPasswordEx">
 						</div>
 						<div class="logbutt">
 						<button type="submit" class="logbuttonstyle">
