@@ -78,16 +78,17 @@ exports.checkout_get = async (req, res)=>{
 }
 
 exports.profile_get = async (req, res)=>{
+
     const cookie = req.cookies.user;
     let data = await account.model.findAll({
         
         where: {
-            id: user
+            id: cookie
             
         }
         
     });
-    res.locals.user = data;
+    res.locals.users = data;
     res.render('Profile');
 }
 
