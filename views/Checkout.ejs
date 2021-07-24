@@ -1,4 +1,4 @@
-<%- include('Navbar'); %>
+﻿<%- include('Navbar'); %>
 <img class="coverimg" src="/headers/checkoutbanner.png">
     <div class="checkout-page">
 
@@ -12,6 +12,8 @@
                   <th>Size</th>
                   <th>Pieces</th>
                   <th>Price</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
                 <% var i;
                 var pic;
@@ -25,23 +27,28 @@
                   <td class="tdtextinfo"><%= product[i].productName%></td>
                   <td class="tdtextinfo"><%= product[i].size%></td>
                   <td class="tdtextinfo"><%= product[i].quantity%></td>
-                  <td class="tdtextinfo"><%= product[i].total%></td>
+                  <td class="tdtextinfo2">₱<%= product[i].total%>.00</td>
+                  <td class="tdtextinfo"><button class="buttonedit">Edit</button></td>
+                  <td class="tdtextinfo"><button class="buttondelete">Delete</button></td>
                 </tr>
                <% } %>
             </table>
             <br>
-            <h5 class="totaltext">Total: <%= total%></h5>
+            <h5 class="totaltext">Total: ₱<%= total%>.00</h5>
         </div>
         <br><br><br>
         <div class="contact">
             <p class="deliverystyle">Delivery Information</p>
             <p class="deliveryinfostyle"><br>
                 <b>Name:</b> <%= users[0].name %><br>
-                Email Address: <%= users[0].email %><br>
-                Contact Number: <%= users[0].Number %><br>
-                Address: <%= users[0].address %>
+                <b>Email Address:</b> <%= users[0].email %><br>
+                <b>Contact Number:</b> <%= users[0].Number %><br>
+                <b>Address:</b> <%= users[0].address %> <br>
+                <b>City:</b> Cebu City<br>
+                <b>Zip Code:</b> 6000
             </p>
-           
+           <button type="button" class="buttoneditdel">Edit Address</button>
+
             <div class="confirm-button">
                 <a href="checkout-confirm" id="<%= users[0].email %>">
                     <button type="button" class="buttoncheckout">Checkout</button>
@@ -146,6 +153,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     float: right;
+    font-weight: 800;
     padding-right: 120px;
     }
 
@@ -183,5 +191,55 @@
 
     .deliveryinfostyle{
     line-height: 200%;
+    }
+
+   .buttoneditdel{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #9DC7AB;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    }
+
+    .buttoneditdel:hover{
+    background-color: #487D64;
+    transition: 0.5s;
+    }
+
+        .buttonedit{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #9DC7AB;
+    border-radius: 20px;
+    border: none;
+    }
+
+    .buttonedit:hover{
+    background-color: #487D64;
+    transition: 0.5s;
+    }
+
+    .buttondelete{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #DC143C;
+    border-radius: 20px;
+    border: none;
+    }
+
+    .buttondelete:hover{
+    background-color: #800000;
+    transition: 0.5s;
     }
 </style>

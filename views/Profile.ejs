@@ -4,9 +4,12 @@
     <div class="profile-details">
         <h1 class="namestyle"><%= users[0].name %></h1>
         <h7><b>Email: </b><%= users[0].email %></h7><br>
-        <h7><b>Contact Number: </b><%= users[0].Number %></h7><br><br>
-        <h9><b>Address: </b></h9><br>
-        <h7><%= users[0].address %></h7><br><br>
+        <h7><b>Contact Number: </b><%= users[0].Number %></h7><br>
+        <h9><b>Address: </b></h9>
+        <h7><%= users[0].address %></h7><br>
+        <h9><b>City: </b></h9><br>
+        <h9><b>Zipcode: </b></h9><br>
+        <button class="buttonedit">Edit Profile</button>
         <a href="logout">
             <div class="button"><button type="button" class="buttonlog">Log Out</button></div>
         </a>
@@ -42,7 +45,7 @@
         float: left;
         font-size: 20px;
         font-family: 'Montserrat', sans-serif;
-        padding: 40px 80px 40px 40px;
+        padding: 40px 120px 40px 40px;
         background-image: url("/checkoutbg.png");
         line-height: 200%;
     }
@@ -69,7 +72,7 @@
     }
 
     .buttonlog{
-    padding: 8px 25px 8px 25px;
+    padding: 8px 30px 8px 30px;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -88,5 +91,22 @@
     .orderhistorystyle{
     font-family: 'Press Start 2P', cursive;
     font-size: 24px;
+    }
+
+    .buttonedit{
+    padding: 8px 20px 8px 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #9DC7AB;
+    border-radius: 20px;
+    border: none;
+    line-height: 140%;
+    }
+
+    .buttonedit:hover{
+    background-color: #487D64;
+    transition: 0.5s;
     }
 </style>

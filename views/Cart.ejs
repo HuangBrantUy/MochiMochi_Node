@@ -1,4 +1,4 @@
-<%- include('Navbar'); %>
+﻿<%- include('Navbar'); %>
 <img class="coverimg" src="/headers/cartbanner.png">
     <div class="checkout-page">
         <div class="cart">
@@ -10,6 +10,8 @@
                   <th>Size</th>
                   <th>Pieces</th>
                   <th>Price</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
 
                 <% var i;
@@ -24,12 +26,14 @@
                   <td class="tdtextinfo"><%= product[i].productName%></td>
                   <td class="tdtextinfo"><%= product[i].size%></td>
                   <td class="tdtextinfo"><%= product[i].quantity%></td>
-                  <td class="tdtextinfo"><%= product[i].total%></td>
+                  <td class="tdtextinfo">₱<%= product[i].total%>.00</td>
+                  <td class="tdtextinfo"><button class="buttonedit">Edit</button></td>
+                  <td class="tdtextinfo"><button class="buttondelete">Delete</button></td>
                 </tr>
                <% } %>
             </table>
             <br>
-            <h5 class="totaltext">Total <%= total%></h5>
+            <h5 class="totaltext">Total ₱<%= total%>.00</h5>
         </div>
         <br><br>
        
@@ -48,7 +52,7 @@
         margin-right: auto;
         margin-bottom: auto;
         
-        width: 60%;
+        width: 70%;
         padding: 10px;
     }
     table{
@@ -117,6 +121,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     float: right;
+    font-weight: 800;
     padding-right: 20px;
     }
    tr:nth-child(0){
@@ -140,5 +145,37 @@
     .tdtextinfo{
     font-size: 26px;
     font-weight: 500;
+    }
+
+    .buttonedit{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #9DC7AB;
+    border-radius: 20px;
+    border: none;
+    }
+
+    .buttonedit:hover{
+    background-color: #487D64;
+    transition: 0.5s;
+    }
+
+    .buttondelete{
+    padding: 8px 25px 8px 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #DC143C;
+    border-radius: 20px;
+    border: none;
+    }
+
+    .buttondelete:hover{
+    background-color: #800000;
+    transition: 0.5s;
     }
 </style>
